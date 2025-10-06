@@ -84,7 +84,7 @@ export class TicketsService {
     const orderBy: Prisma.TicketOrderByWithRelationInput = {};
     query.sortBy
       ? (orderBy[query.sortBy] = query.sortOrder ?? 'desc')
-      : (orderBy['createdAt'] = 'desc');
+      : (orderBy['createdAt'] = query.sortOrder ?? 'desc');
 
     try {
       const [numberOfTickets, tickets] = await Promise.all([

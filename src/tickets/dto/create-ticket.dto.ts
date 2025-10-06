@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
 import { Priority, Status } from '../interfaces/ticket.interface';
 
 export class CreateTicketDto {
@@ -13,8 +13,10 @@ export class CreateTicketDto {
   description?: string;
 
   @IsOptional()
+  @IsEnum(Priority)
   priority?: Priority = Priority.MEDIUM;
 
   @IsOptional()
+  @IsEnum(Status)
   status?: Status = Status.OPEN;
 }

@@ -7,8 +7,6 @@ The app expects an endpoint available at the following endpoints:
 - PATCH /tickets/:id - To update ticket
 - DELETE /tickets/:id - To delete ticket
 
-all features are included as the requirement.
-
 Tech Stack: Prisma + SQLite + bullmq + redis
 
 ## Project setup
